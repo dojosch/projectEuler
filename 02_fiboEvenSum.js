@@ -1,9 +1,7 @@
 const fiboEvenSum = (n) => {
-    let sum = 0, f1 = 0, f2 = 1, tmp     
+    let sum = 0, f1 = 0, f2 = 1  
     do {
-        tmp = f1 + f2
-        f1 = f2
-        f2 = tmp
+        [f1, f2] = [f2, f1 + f2];
         sum = f2 % 2 == 0 ? sum + f2 : sum
     } while(f2 < n)
     return sum
